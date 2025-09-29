@@ -1,16 +1,17 @@
 /// <reference types="@wdio/globals/types" />
 import allure from '@wdio/allure-reporter';
+const { JoinAsConsultant } = require('../helpers/testFlows');
 
-describe('Login Test Suite', () => {
-    it('should open the login page', async () => {
-        allure.addFeature('Authentication');
+describe('Estenarh-Consultant App Test Suite', () => {
+    beforeEach(async function () {
+        allure.addFeature('Estenarh-Consultant Mobile App');
+    });
+
+    it('JoinAsConsultant', async () => {
         allure.addSeverity('critical');
-
-        allure.startStep('Navigate to login page');
-        await browser.url('https://www.saucedemo.com/');
+        allure.addDescription('Verify Join as Consultan Flow', 'text');
+        allure.startStep('Execute Join as Consultant Flow');
+        await JoinAsConsultant();
         allure.endStep();
-
-        // Taking screenshot for the report
-        await browser.takeScreenshot();
     });
 });

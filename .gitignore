@@ -1,2 +1,5 @@
 /app
 /node_modules
+/allure-results
+/allure-report
+/screenshots

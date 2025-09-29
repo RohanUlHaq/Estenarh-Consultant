@@ -19,6 +19,7 @@ export async function JoinAsConsultant() {
     await JoinAsConsultantLocators.email_input.setValue(generateRandomEmail());
     await JoinAsConsultantLocators.login_button_next.click();
     await browser.pause(2000); // Wait for OTP input to appear
+    await JoinAsConsultantLocators.otp1.click();
     await JoinAsConsultantLocators.otp1.setValue('1');
     await JoinAsConsultantLocators.otp2.setValue('2');
     await JoinAsConsultantLocators.otp3.setValue('3');
